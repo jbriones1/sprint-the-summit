@@ -25,7 +25,7 @@ if (image) {
     src: image,
     format: 'webp',
     quality: 'high',
-    width: 1200,
+    width: 1200
   });
 }
 
@@ -51,26 +51,18 @@ const imageUrl =
       title: title,
       type: 'website',
       image: imageUrl,
-      url: canonicalUrl.toString(),
+      url: canonicalUrl.toString()
     },
     optional: {
       description: description,
-      siteName: siteData.title,
+      siteName: siteData.title
     },
     image: {
       type: 'image/webp',
       width: optimizedImage?.attributes.width || '1200',
       height: optimizedImage?.attributes.height || '800',
-      alt: title,
-    },
-  }}
-  twitter={{
-    site: '@' + siteData.author.twitter,
-    creator: '@' + siteData.author.twitter,
-    card: 'summary_large_image',
-    title: title,
-    description: description,
-    image: imageUrl,
+      alt: title
+    }
   }}
   noindex={noindex}
   nofollow={noindex}
