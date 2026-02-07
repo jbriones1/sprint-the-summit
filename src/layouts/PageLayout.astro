@@ -1,0 +1,27 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+import siteData from '@config/siteData.json';
+
+const { title, description } = Astro.props as Props;
+---
+
+<BaseLayout
+  type="general"
+  title={`${title} | ${siteData.title}`}
+  description={description}
+  navStartStyle="default"
+>
+  <div class="relative w-full overflow-hidden"></div>
+  <article class="mx-auto mt-12 px-4 md:max-w-6xl md:pt-36">
+    <h1 class="h1 description mt-4 text-center uppercase">
+      {title}
+    </h1>
+    <slot />
+  </article>
+</BaseLayout>

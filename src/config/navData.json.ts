@@ -19,7 +19,7 @@ const navConfig: navItem[] = [
   },
   {
     text: 'Routes',
-    link: '/routes/'
+    link: '/routes'
   },
   {
     text: 'Register',

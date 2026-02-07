@@ -1,0 +1,40 @@
+---
+import route1 from '@assets/images/route-1.png';
+import route2 from '@assets/images/route-2.png';
+import route3 from '@assets/images/route-3.jpg';
+import PageLayout from '@layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+---
+
+<PageLayout title={'Routes'} description={'Learn about the routes you can run during the event.'}>
+  <div class="mt-6 grid place-items-center gap-1 md:grid-cols-2">
+    <Image src={route1} alt="Route 1" densities={[1.5, 2, 3]} class="h-auto object-contain" />
+    <div>
+      <h3 class="h3 text-primary-500 mb-2">Runner</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit dolorem nobis accusamus?
+        Recusandae dolorum deserunt, similique accusantium eaque quasi ullam.
+      </p>
+    </div>
+  </div>
+  <div class="mt-6 grid place-items-center gap-1 md:grid-cols-2">
+    <div>
+      <h3 class="h3 text-primary-500 mb-2">Sprinter</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit dolorem nobis accusamus?
+        Recusandae dolorum deserunt, similique accusantium eaque quasi ullam.
+      </p>
+    </div>
+    <Image src={route2} alt="Route 2" densities={[1.5, 2, 3]} class="h-auto object-contain" />
+  </div>
+  <div class="mt-6 grid place-items-center gap-1 md:grid-cols-2">
+    <Image src={route3} alt="Route 3" densities={[1.5, 2, 3]} class="h-auto object-contain" />
+    <div>
+      <h3 class="h3 text-primary-500 mb-2">Summiter</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit dolorem nobis accusamus?
+        Recusandae dolorum deserunt, similique accusantium eaque quasi ullam.
+      </p>
+    </div>
+  </div>
+</PageLayout>
