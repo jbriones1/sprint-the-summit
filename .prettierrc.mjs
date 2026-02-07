@@ -1,18 +1,19 @@
-/** @type {import("prettier").Config} */
 export default {
-  printWidth: 100,
-  semi: true,
-  singleQuote: true,
-  tabWidth: 2,
-  trailingComma: 'all',
-  useTabs: false,
-  plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
-  overrides: [
+  'arrowParens': 'avoid',
+  'brackerSpacing': true,
+  'printWidth': 100,
+  'semi': true,
+  'singleQuote': true,
+  'tabWidth': 2,
+  'trailingComma': 'none',
+  'useTabs': false,
+  'plugins': ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
+  'overrides': [
     {
-      files: ['**/*.astro'],
-      options: {
-        parser: 'astro',
-      },
-    },
-  ],
-};
+      'files': ['**/*.astro'],
+      'options': {
+        'parser': 'astro'
+      }
+    }
+  ]
+}

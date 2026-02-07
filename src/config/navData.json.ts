@@ -15,37 +15,41 @@ export type navItem = navLinkItem | navDropdownItem;
 const navConfig: navItem[] = [
   {
     text: 'Home',
-    link: '/',
+    link: '/'
   },
   {
-    text: 'portfolios',
-    link: '/portfolio/',
+    text: 'Routes',
+    link: '/routes/'
   },
   {
-    text: 'Pricing',
-    link: '/#pricing',
-  },
-  {
-    text: 'Pages',
+    text: 'Register',
     dropdown: [
       {
-        text: 'Portfolio',
-        link: '/portfolio/couple-1/',
+        text: 'Runners',
+        link: '/register'
       },
       {
-        text: 'Legal',
-        link: '/privacy-policy/',
+        text: 'Volunteers',
+        link: '/volunteer'
       },
       {
-        text: 'Elements',
-        link: '/elements/',
+        text: 'Sponsors',
+        link: '/sponsor'
       },
       {
         text: '404',
-        link: '/not-a-link/',
-      },
-    ],
+        link: '/404'
+      }
+    ]
   },
+  {
+    text: 'Sponsors',
+    link: '/sponsor'
+  },
+  {
+    text: 'Photos',
+    link: '/photos'
+  }
 ];
 
 export default navConfig;
