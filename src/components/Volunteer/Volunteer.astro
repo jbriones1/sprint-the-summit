@@ -1,0 +1,38 @@
+---
+import Button from '@components/Button/Button.astro';
+import volunteerImage from '@images/volunteer1.jpg';
+import { Image } from 'astro:assets';
+---
+
+<section id="portfolio" class="site-container mt-12 scroll-mt-10 py-8 md:py-12">
+  <div class="mx-auto max-w-6xl text-center">
+    <h2 class="h2 text-pretty uppercase">Volunteer</h2>
+  </div>
+  <div class="grid gap-10 pt-8 md:grid-cols-2 md:pt-12">
+    <div class="md:bg-base-100 md:rounded-md md:p-10 md:pb-6">
+      <Image
+        src={volunteerImage}
+        alt="Volunteers"
+        width={450}
+        densities={[1.5, 2, 3]}
+        class="h-auto min-h-full w-full min-w-full object-cover"
+      />
+    </div>
+    <div class="flex h-full flex-col justify-between gap-y-6">
+      <p class="text-base-content/80 text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum quaerat nihil repudiandae
+        velit commodi! Ad, modi? Quas non libero quod voluptas harum fugiat ipsa corporis ea maxime
+        dolor, quasi reiciendis officiis voluptates magni nobis. Unde id atque omnis libero officiis
+        doloremque voluptas ex? Alias minima ullam at voluptatum cupiditate eius, quaerat sit velit
+        consequuntur. Totam, culpa labore. Impedit neque aspernatur quasi animi odit! Ipsa
+        exercitationem cupiditate, amet nostrum porro quam consequatur nesciunt saepe laboriosam
+        temporibus molestias voluptates in dolores velit, fugiat numquam sapiente. Ex temporibus,
+        voluptatum voluptate, ipsa distinctio in voluptates, modi repellat optio culpa minus porro
+        cupiditate harum numquam.
+      </p>
+      <div class="mt-12 flex justify-center">
+        <Button href="/volunteer" variant="outline">Join our team</Button>
+      </div>
+    </div>
+  </div>
+</section>
