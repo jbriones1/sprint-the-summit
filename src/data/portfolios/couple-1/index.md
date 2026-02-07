@@ -2,7 +2,7 @@
 title: A mountain escape
 description: Transform your wedding moments into lasting memories amidst California's majestic mountains.
 heroImage: ./couple-9-square.jpg
-date: "Aug 5 2024"
+date: 'Aug 5 2024'
 location: Malibu, California
 clients: [Hannah, Marco]
 images:

@@ -1,19 +1,19 @@
 ---
 // layout
-import PortfolioLayout from "@layouts/PortfolioLayout.astro";
-import { type InferGetStaticPropsType } from "astro";
-import { type CollectionEntry, getCollection, render } from "astro:content";
+import PortfolioLayout from '@layouts/PortfolioLayout.astro';
+import { type InferGetStaticPropsType } from 'astro';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-	const portfolios = await getCollection("portfolios", ({ data }) => {
-		// filter out draft pages
-		return data.draft !== true;
-	});
+  const portfolios = await getCollection('portfolios', ({ data }) => {
+    // filter out draft pages
+    return data.draft !== true;
+  });
 
-	return portfolios.map((portfolio) => ({
-		params: { slug: portfolio.id },
-		props: portfolio,
-	}));
+  return portfolios.map((portfolio) => ({
+    params: { slug: portfolio.id },
+    props: portfolio,
+  }));
 }
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
@@ -22,5 +22,5 @@ const { Content } = await render(portfolio);
 ---
 
 <PortfolioLayout portfolio={portfolio}>
-	<Content />
+  <Content />
 </PortfolioLayout>
