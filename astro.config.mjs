@@ -14,8 +14,8 @@ export default defineConfig({
     AutoImport({
       imports: [
         // https://github.com/delucis/astro-auto-import
-        '@components/Admonition/Admonition.astro',
-      ],
+        '@components/Admonition/Admonition.astro'
+      ]
     }),
     mdx(),
     icon({
@@ -33,9 +33,9 @@ export default defineConfig({
           'x',
           'chevron-down',
           'category',
-          'calendar-event',
-        ],
-      },
+          'calendar-event'
+        ]
+      }
     }),
     sitemap(),
     compress({
@@ -43,14 +43,14 @@ export default defineConfig({
       JavaScript: true,
       CSS: false,
       Image: false, // astro:assets handles this. Enabling this can dramatically increase build times
-      SVG: false, // astro-icon handles this
-    }),
+      SVG: false // astro-icon handles this
+    })
   ],
   vite: {
     plugins: [tailwindcss()],
     // stop inlining short scripts to fix issues with ClientRouter: https://github.com/withastro/astro/issues/12804
     build: {
-      assetsInlineLimit: 0,
-    },
-  },
+      assetsInlineLimit: 0
+    }
+  }
 });
