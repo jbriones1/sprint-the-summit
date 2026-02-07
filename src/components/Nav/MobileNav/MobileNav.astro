@@ -39,23 +39,18 @@ import { Icon } from 'astro-icon/components';
         <ul class="mx-1 mt-2 text-xl">
           {
             // if dropdown exists, setup the dropdown, otherwise it is just a link
-            navData.map((navItem) =>
+            navData.map(navItem =>
               'dropdown' in navItem ? (
                 // non-mobile dropdown menu
                 <MobileNavDropdown navItem={navItem} />
               ) : (
                 // normal nav link
                 <NavLink {navItem} />
-              ),
+              )
             )
           }
         </ul>
       </nav>
-      <div class="mx-1 mt-2 w-full px-4">
-        <Button variant="outline" class="w-full" href="https://cosmicthemes.com/themes/horizon/">
-          Get Horizon
-        </Button>
-      </div>
     </div>
   </div>
 
