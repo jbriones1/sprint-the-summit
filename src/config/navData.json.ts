@@ -25,17 +25,17 @@ const navConfig: navItem[] = [
     text: 'Register',
     dropdown: [
       {
-        text: 'Runners',
+        text: 'Runner',
         link: '/register'
       },
       {
-        text: 'Volunteers',
+        text: 'Volunteer',
         link: '/volunteer'
       }
     ]
   },
   {
-    text: 'Sponsors',
+    text: 'Sponsor',
     link: '/sponsor'
   }
   // {

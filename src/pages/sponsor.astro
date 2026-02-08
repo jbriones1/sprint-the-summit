@@ -1,0 +1,44 @@
+---
+import Button from '@components/Button/Button.astro';
+import landy from '@images/landy-1.png';
+import sfss from '@images/sfss-logo-small.png';
+import sfuFlag1 from '@images/sfu-flag-1.jpg';
+import PageLayout from '@layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+---
+
+<PageLayout title={'Sponsor'} description={'Partner up to make this event a success!'}>
+  <h2 class="h2 text-center">A huge thank you to our sponsors!</h2>
+  <div class="flex">
+    <Image
+      src={sfss}
+      alt="SFSS logo"
+      densities={[1.5, 2, 3]}
+      class="mx-auto mt-4 h-auto w-full max-w-xs object-contain"
+    />
+    <Image
+      src={landy}
+      alt="Landy Liu"
+      densities={[1.5, 2, 3]}
+      class="mx-auto mt-4 h-auto w-full max-w-xs object-contain"
+    />
+  </div>
+  <div class="bg-base-100 flex-grid mt-4 p-8">
+    <div class="flex flex-col justify-between">
+      <h3 class="h3 mb-4">Become a Sponsor</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat a at voluptates et
+        aliquid, maxime officiis rerum modi ipsum explicabo!
+      </p>
+      <div class="flex justify-center">
+        <Button href="/register" variant="primary" class="mt-12 w-fit">Contact</Button>
+      </div>
+    </div>
+    <Image
+      src={sfuFlag1}
+      alt="SFU flag"
+      densities={[1.5, 2, 3]}
+      class="row-start-1 h-auto min-h-full w-full min-w-full object-cover"
+    />
+  </div>
+</PageLayout>
