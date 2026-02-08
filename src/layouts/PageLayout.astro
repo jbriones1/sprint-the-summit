@@ -1,4 +1,6 @@
 ---
+import Sponsors from '@components/Sponsors/Sponsors.astro';
+
 import BaseLayout from './BaseLayout.astro';
 
 interface Props {
@@ -40,4 +42,5 @@ const { title, description } = Astro.props as Props;
   <article class="mx-auto px-4 md:max-w-6xl md:pt-24">
     <slot />
   </article>
+  <Sponsors />
 </BaseLayout>

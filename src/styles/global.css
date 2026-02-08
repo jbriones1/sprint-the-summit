@@ -213,3 +213,8 @@
   }
 }
 
+@layer utilities {
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+}

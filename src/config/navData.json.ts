@@ -31,14 +31,6 @@ const navConfig: navItem[] = [
       {
         text: 'Volunteers',
         link: '/volunteer'
-      },
-      {
-        text: 'Sponsors',
-        link: '/sponsor'
-      },
-      {
-        text: '404',
-        link: '/404'
       }
     ]
   },

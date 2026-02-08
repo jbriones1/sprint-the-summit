@@ -3,20 +3,22 @@
  * * Sponsors section
  */
 
-import profileImage from '@assets/images/landy-1.png';
+import landy from '@assets/images/landy-1.png';
+import sfssLogo from '@assets/images/sfss-logo-small.png';
 import { Marquee, MarqueeContent } from '@ui/marquee';
 import { Image } from 'astro:assets';
 ---
 
 <section id="portfolio" class="site-container mt-12 scroll-mt-10 py-8 md:py-12">
   <div class="mx-auto max-w-6xl text-center">
-    <h2 class="h2 text-pretty uppercase">Sponsors</h2>
+    <h3 class="h3 text-pretty uppercase">Sponsored by</h3>
   </div>
-  <Marquee>
+  <Marquee class="mt-8">
     <MarqueeContent>
-      <Image src={profileImage} alt="Landy" class="w-32 rounded-full" />
-      <Image src={profileImage} alt="Landy" class="w-32 rounded-full" />
-      <Image src={profileImage} alt="Landy" class="w-32 rounded-full" />
+      <Image src={landy} alt="Landy" class="w-16" />
+      <Image src={sfssLogo} alt="SFSS" />
+      <Image src={landy} alt="Landy" class="w-16" />
+      <Image src={sfssLogo} alt="SFSS" />
     </MarqueeContent>
   </Marquee>
 </section>
