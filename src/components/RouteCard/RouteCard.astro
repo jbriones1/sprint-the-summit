@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+
+export interface RouteCardProps {
+  id: number;
+  isAlignedRight?: boolean;
+  name: string;
+  distance: number;
+  elevation: string;
+  terrain: string;
+  routeImage: ImageMetadata;
+  routeImageAlt: string;
+}
+
+const { id, isAlignedRight, name, distance, elevation, terrain, routeImage, routeImageAlt } =
+  Astro.props as RouteCardProps;
+---
+
+<div id={`route-${id}`} class="mt-6 grid place-items-center gap-4 md:grid-cols-2">
+  <Image
+    src={routeImage}
+    alt={routeImageAlt}
+    densities={[1.5, 2, 3]}
+    class="h-auto object-contain"
+  />
+  <div class:list={[{ 'md:col-start-1 md:row-start-1': isAlignedRight }]}>
+    <h3 class="h3 text-primary-900 mb-2">{name}</h3>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit dolorem nobis accusamus?
+      Recusandae dolorum deserunt, similique accusantium eaque quasi ullam.
+    </p>
+    <ul class="mt-4 list-inside">
+      <li><strong>Distance:</strong> {distance} km</li>
+      <li><strong>Elevation:</strong> {elevation}</li>
+      <li><strong>Terrain:</strong> {terrain}</li>
+    </ul>
+  </div>
+</div>

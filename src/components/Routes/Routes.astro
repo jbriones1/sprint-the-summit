@@ -3,43 +3,16 @@
  * * Pricing cards with three cards
  */
 
+import routeData from '@config/routeData.json';
 import { Image } from 'astro:assets';
 
-interface RunRoute {
+export interface RunRoute {
   name: string;
   distance: number;
   elevation: string;
   terrain: string;
   image: ImageMetadata;
 }
-
-import image1 from '@assets/images/tfox-run-1.jpg';
-import image2 from '@assets/images/tfox-run-2.jpg';
-import image3 from '@assets/images/tfox-run-3.jpg';
-
-const routeData: RunRoute[] = [
-  {
-    name: 'Runner',
-    distance: 10,
-    elevation: 'Flat',
-    terrain: 'Road',
-    image: image1
-  },
-  {
-    name: 'Sprinter',
-    distance: 15,
-    elevation: 'Slight',
-    terrain: 'Path',
-    image: image2
-  },
-  {
-    name: 'Summiter',
-    distance: 25,
-    elevation: 'Varied',
-    terrain: 'Mixed',
-    image: image3
-  }
-];
 ---
 
 <section id="routes" class="mx-auto max-w-6xl scroll-mt-10 px-4 py-8 md:py-12">
@@ -51,13 +24,13 @@ const routeData: RunRoute[] = [
     class="mx-auto grid w-full max-w-md gap-12 pt-8 sm:max-w-none sm:grid-cols-2 md:pt-12 lg:grid-cols-3"
   >
     {
-      routeData.map(plan => (
+      routeData.map(route => (
         <div class="flex w-full flex-col">
           <div>
             <div class="aspect-[3/4] h-auto w-full overflow-hidden">
               <Image
-                src={plan.image}
-                alt={plan.name}
+                src={route.cardImage}
+                alt={route.cardImageAlt}
                 width={450}
                 densities={[1.5, 2]}
                 class="h-full w-full object-cover"
@@ -66,12 +39,16 @@ const routeData: RunRoute[] = [
           </div>
           <div class="border-primary-500 flex h-full flex-col justify-between border-2 border-t-0 pt-10 pb-10">
             <div>
-              <h3 class="h2 text-center">{plan.name}</h3>
+              <h3 class="h2 text-center">{route.name}</h3>
 
               <ul class="mt-4 flex flex-col gap-3 px-8">
-                <li class="leading-snug lg:text-lg lg:leading-snug">Distance: {plan.distance}km</li>
-                <li class="leading-snug lg:text-lg lg:leading-snug">Elevation: {plan.elevation}</li>
-                <li class="leading-snug lg:text-lg lg:leading-snug">Terrain: {plan.terrain}</li>
+                <li class="leading-snug lg:text-lg lg:leading-snug">
+                  Distance: {route.distance}km
+                </li>
+                <li class="leading-snug lg:text-lg lg:leading-snug">
+                  Elevation: {route.elevation}
+                </li>
+                <li class="leading-snug lg:text-lg lg:leading-snug">Terrain: {route.terrain}</li>
               </ul>
             </div>
           </div>

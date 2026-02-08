@@ -1,40 +1,22 @@
 ---
-import route1 from '@assets/images/route-1.png';
-import route2 from '@assets/images/route-2.png';
-import route3 from '@assets/images/route-3.jpg';
+import RouteCard from '@components/RouteCard/RouteCard.astro';
+import routeData from '@config/routeData.json';
 import PageLayout from '@layouts/PageLayout.astro';
-import { Image } from 'astro:assets';
 ---
 
 <PageLayout title={'Routes'} description={'Learn about the routes you can run during the event.'}>
-  <div id="route-1" class="mt-6 grid place-items-center gap-4 md:grid-cols-2">
-    <Image src={route1} alt="Route 1" densities={[1.5, 2, 3]} class="h-auto object-contain" />
-    <div>
-      <h3 class="h3 text-primary-500 mb-2">Runner</h3>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit dolorem nobis accusamus?
-        Recusandae dolorum deserunt, similique accusantium eaque quasi ullam.
-      </p>
-    </div>
-  </div>
-  <div id="route-2" class="mt-6 grid place-items-center gap-4 md:grid-cols-2">
-    <Image src={route2} alt="Route 2" densities={[1.5, 2, 3]} class="h-auto object-contain" />
-    <div class="md:col-start-1 md:row-start-1">
-      <h3 class="h3 text-primary-500 mb-2">Sprinter</h3>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit dolorem nobis accusamus?
-        Recusandae dolorum deserunt, similique accusantium eaque quasi ullam.
-      </p>
-    </div>
-  </div>
-  <div id="route-3" class="mt-6 grid place-items-center gap-4 md:grid-cols-2">
-    <Image src={route3} alt="Route 3" densities={[1.5, 2, 3]} class="h-auto object-contain" />
-    <div>
-      <h3 class="h3 text-primary-500 mb-2">Summiter</h3>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit dolorem nobis accusamus?
-        Recusandae dolorum deserunt, similique accusantium eaque quasi ullam.
-      </p>
-    </div>
-  </div>
+  {
+    routeData.map((route, index) => (
+      <RouteCard
+        id={index + 1}
+        isAlignedRight={index % 2 === 1}
+        name={route.name}
+        distance={route.distance}
+        elevation={route.elevation}
+        terrain={route.terrain}
+        routeImage={route.routeImage}
+        routeImageAlt={route.routeImageAlt}
+      />
+    ))
+  }
 </PageLayout>
