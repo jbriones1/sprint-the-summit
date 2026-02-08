@@ -39,8 +39,17 @@ const navConfig: navItem[] = [
     link: '/sponsor'
   },
   {
-    text: 'Photos',
-    link: '/photos'
+    text: 'Results',
+    dropdown: [
+      {
+        text: 'Placements',
+        link: '/placements'
+      },
+      {
+        text: 'Photos',
+        link: '/photos'
+      }
+    ]
   }
 ];
 
