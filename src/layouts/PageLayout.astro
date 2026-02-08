@@ -6,7 +6,9 @@ interface Props {
   description: string;
 }
 
+import aerial from '@assets/images/sfu-aerial-2.jpg';
 import siteData from '@config/siteData.json';
+import { Image } from 'astro:assets';
 
 const { title, description } = Astro.props as Props;
 ---
@@ -15,10 +17,24 @@ const { title, description } = Astro.props as Props;
   type="general"
   title={`${title} | ${siteData.title}`}
   description={description}
-  navStartStyle="default"
+  navStartStyle="white"
 >
-  <div class="relative w-full overflow-hidden"></div>
-  <article class="mx-auto mt-16 px-4 md:max-w-6xl md:pt-36">
+  <div class="relative h-[10svh] w-full overflow-hidden md:h-[20svh]">
+    <div class="absolute inset-0 z-10 bg-black/50"></div>
+    <Image
+      src={aerial}
+      alt="SFU aerial"
+      densities={[1.5, 2, 3]}
+      class="absolute inset-0 h-auto min-h-full w-full min-w-full object-cover md:hidden"
+    />
+    <Image
+      src={aerial}
+      alt="SFU aerial"
+      densities={[1.5, 2, 3]}
+      class="absolute inset-0 hidden h-auto min-h-full w-full min-w-full object-cover md:block"
+    />
+  </div>
+  <article class="mx-auto px-4 md:max-w-6xl md:pt-24">
     <h1 class="h1 description mt-4 text-center uppercase">
       {title}
     </h1>
