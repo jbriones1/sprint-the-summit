@@ -1,0 +1,28 @@
+---
+import Button from '@components/Button/Button.astro';
+import volunteer2 from '@images/volunteer-2.jpg';
+import PageLayout from '@layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+---
+
+<PageLayout title={'Volunteer'} description={'Help out with the event!'}>
+  <div class="bg-base-100 flex-grid mt-4 p-8">
+    <div class="flex flex-col justify-between">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident est animi qui veritatis?
+        Maiores sint, harum tempora, minus exercitationem quas eius asperiores voluptatum quae quam
+        possimus itaque minima ratione sunt facilis nesciunt iure deleniti amet repellat veniam,
+        laborum atque. Culpa facilis velit vel quaerat ipsum corrupti alias officiis at et.
+      </p>
+      <div class="flex justify-center">
+        <Button href="/register" variant="primary" class="mt-12 w-fit">Volunteer</Button>
+      </div>
+    </div>
+    <Image
+      src={volunteer2}
+      alt="Volunteers"
+      densities={[1.5, 2, 3]}
+      class="h-auto min-h-full w-full min-w-full object-cover"
+    />
+  </div>
+</PageLayout>

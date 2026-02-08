@@ -81,6 +81,10 @@
     scroll-margin-top: 4rem;
   }
 
+  .flex-grid {
+    @apply grid grid-rows-2 place-items-center gap-2 md:grid-cols-2 md:grid-rows-1;
+  }
+
   /* styles navbar links */
   .nav__link--base {
     @apply font-heading-1 px-4 py-2 tracking-wide uppercase transition duration-200 hover:opacity-80;

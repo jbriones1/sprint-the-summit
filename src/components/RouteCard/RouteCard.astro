@@ -1,4 +1,5 @@
 ---
+import Button from '@components/Button/Button.astro';
 import { Image } from 'astro:assets';
 
 export interface RouteCardProps {
@@ -16,14 +17,14 @@ const { id, isAlignedRight, name, distance, elevation, terrain, routeImage, rout
   Astro.props as RouteCardProps;
 ---
 
-<div id={`route-${id}`} class="mt-6 grid place-items-center gap-4 md:grid-cols-2">
+<div id={`route-${id}`} class="flex-grid mt-6">
   <Image
     src={routeImage}
     alt={routeImageAlt}
     densities={[1.5, 2, 3]}
     class="h-auto object-contain"
   />
-  <div class:list={[{ 'md:col-start-1 md:row-start-1': isAlignedRight }]}>
+  <div class:list={['bg-base-100 p-8', { 'md:col-start-1 md:row-start-1': isAlignedRight }]}>
     <h3 class="h3 mb-2">{name}</h3>
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit dolorem nobis accusamus?
@@ -34,5 +35,8 @@ const { id, isAlignedRight, name, distance, elevation, terrain, routeImage, rout
       <li><strong>Elevation:</strong> {elevation}</li>
       <li><strong>Terrain:</strong> {terrain}</li>
     </ul>
+    <div class="flex justify-center">
+      <Button href="/register" variant="primary" class="mt-12 w-fit">Register</Button>
+    </div>
   </div>
 </div>
