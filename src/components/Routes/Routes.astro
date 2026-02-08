@@ -1,8 +1,9 @@
 ---
 /**
- * * Pricing cards with three cards
+ * * Route section
  */
 
+import Button from '@components/Button/Button.astro';
 import routeData from '@config/routeData.json';
 import { Image } from 'astro:assets';
 
@@ -55,5 +56,8 @@ export interface RunRoute {
         </div>
       ))
     }
+  </div>
+  <div class="mt-12 flex justify-center">
+    <Button href="/register" variant="primary">Register</Button>
   </div>
 </section>

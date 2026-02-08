@@ -1,0 +1,48 @@
+---
+import Button from '@components/Button/Button.astro';
+import field from '@images/tfox-field-1.jpg';
+import sfuAerial1 from '@images/sfu-aerial.jpg';
+import sfuAerial2 from '@images/sfu-aerial-2.jpg';
+import sfuAerial3 from '@images/sfu-aerial-3.jpg';
+import sfuAerial4 from '@images/sfu-aerial-4.jpg';
+import tfox1 from '@images/tfox-run-1.jpg';
+import tfox2 from '@images/tfox-run-2.jpg';
+import tfox3 from '@images/tfox-run-3.jpg';
+import tfox4 from '@images/tfox-run-4.jpg';
+import PageLayout from '@layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+
+interface GalleryImage {
+  src: ImageMetadata;
+  alt: string;
+}
+
+const images: GalleryImage[] = [
+  { src: field, alt: 'Field' },
+  { src: sfuAerial1, alt: 'Aerial shot of SFU' },
+  { src: sfuAerial2, alt: 'Aerial shot of SFU' },
+  { src: sfuAerial3, alt: 'Aerial shot of SFU' },
+  { src: sfuAerial4, alt: 'Aerial shot of SFU' },
+  { src: tfox1, alt: 'Runners' },
+  { src: tfox2, alt: 'Runners' },
+  { src: tfox3, alt: 'Runners' },
+  { src: tfox4, alt: 'Runners' }
+];
+---
+
+<PageLayout title={'Photos'} description={'A collection of highlights from the event.'}>
+  <div class="grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
+    {
+      images.map(image => (
+        <div class="border-primary-500 border-2">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            densities={[1.5, 2, 3]}
+            class="h-64 w-full break-inside-avoid object-cover"
+          />
+        </div>
+      ))
+    }
+  </div>
+</PageLayout>
