@@ -8,8 +8,8 @@ import icon from 'astro-icon'; // https://www.astroicon.dev/guides/upgrade/v1/
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jbriones1.github.io',
-  base: '/sprint-the-summit',
+  // site: 'https://sprintthesummit.ca',
+  site: 'https://sprint-the-summit.runwebsite.workers.dev',
   integrations: [
     // example auto import component into blog post mdx files
     // AutoImport({
