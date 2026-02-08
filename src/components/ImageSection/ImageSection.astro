@@ -23,5 +23,5 @@ const { id, heading, backgroundImage, backgroundImageAlt } = Astro.props as Imag
     densities={[1.5, 2, 3]}
     class="absolute inset-0 hidden min-h-full w-full min-w-full object-cover md:block"
   />
-  <div class="relative z-10 bg-white p-8"><h3 class="h3 mb-4">{heading}</h3><slot /></div>
+  <div class="relative z-1 bg-white p-8"><h3 class="h3 mb-4">{heading}</h3><slot /></div>
 </section>

@@ -56,7 +56,7 @@
   --font-sans: 'Work Sans Variable', var(--font-fallback);
   --font-heading-1: 'Montserrat Variable', var(--font-serif);
   --font-heading-2: 'Raleway Variable', var(--font-fallback);
-  --font-decorative: 'Montserrat Variable', 'Montserrat Variable', var(--font-serif);
+  --font-decorative: 'Bebas Neue', 'Montserrat Variable', var(--font-serif);
   --font-mono:
     'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace';
 }

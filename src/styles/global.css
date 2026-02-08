@@ -77,6 +77,10 @@
     @apply focus:border-primary-400 focus-visible:border-primary-400 focus:ring-0 focus:outline-none focus-visible:outline-none;
   }
 
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+
   /* styles navbar links */
   .nav__link--base {
     @apply font-heading-1 px-4 py-2 tracking-wide uppercase transition duration-200 hover:opacity-80;
@@ -210,11 +214,5 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-@layer utilities {
-  section[id] {
-    scroll-margin-top: 4rem;
   }
 }

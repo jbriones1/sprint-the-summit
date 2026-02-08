@@ -37,20 +37,20 @@ const navConfig: navItem[] = [
   {
     text: 'Sponsors',
     link: '/sponsor'
-  },
-  {
-    text: 'Results',
-    dropdown: [
-      {
-        text: 'Placements',
-        link: '/placements'
-      },
-      {
-        text: 'Photos',
-        link: '/photos'
-      }
-    ]
   }
+  // {
+  //   text: 'Results',
+  //   dropdown: [
+  //     {
+  //       text: 'Placements',
+  //       link: '/placements'
+  //     },
+  //     {
+  //       text: 'Photos',
+  //       link: '/photos'
+  //     }
+  //   ]
+  // }
 ];
 
 export default navConfig;

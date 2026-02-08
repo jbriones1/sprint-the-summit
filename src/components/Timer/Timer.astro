@@ -1,0 +1,149 @@
+---
+interface Props {
+  isHeader?: boolean;
+}
+
+const { isHeader = false } = Astro.props;
+const target = new Date('2026-03-31T09:00:00-07:00');
+
+// Don't render this if the target date has already passed
+if (new Date() >= target) {
+  return null;
+}
+---
+
+<div
+  id="timer"
+  class:list={[
+    'font-decorative bg-base-100 text-primary-700 sticky top-16 flex justify-center gap-8 py-4 text-center leading-none transition-[padding] duration-300',
+    { 'timer--header': isHeader }
+  ]}
+  data-target={target.toISOString()}
+>
+  <div class="timer__item">
+    <span id="timer__day"></span>
+    <span class="timer__label">days</span>
+  </div>
+  <div class="timer__item">
+    <span id="timer__hour"></span>
+    <span class="timer__label">hours</span>
+  </div>
+  <div class="timer__item">
+    <span id="timer__min"></span>
+    <span class="timer__label">minutes</span>
+  </div>
+  <div class="timer__item">
+    <span id="timer__sec"></span>
+    <span class="timer__label">seconds</span>
+  </div>
+</div>
+<script>
+  let timerInterval: any;
+  let timer: HTMLElement | null;
+
+  function scrollHandler() {
+    if (timer) {
+      if (window.scrollY > 50) {
+        // if we have scrolled down the page a bit, adjust colors
+        timer.classList.add('scrolled');
+        timer.classList.remove('initial');
+      } else {
+        timer.classList.add('initial');
+        timer.classList.remove('scrolled');
+      }
+    }
+  }
+
+  function main() {
+    if (timerInterval) {
+      clearInterval(timerInterval);
+    }
+
+    timer = document.getElementById('timer');
+    const timerDay = document.getElementById('timer__day');
+    const timerHour = document.getElementById('timer__hour');
+    const timerMin = document.getElementById('timer__min');
+    const timerSec = document.getElementById('timer__sec');
+
+    if (!timer) {
+      return;
+    }
+
+    const targetString = timer?.getAttribute('data-target');
+    if (!targetString) {
+      return;
+    }
+
+    const target = new Date(targetString);
+
+    function timerUpdate() {
+      const timeLeft = target.getTime() - new Date().getTime();
+      if (!timer || !timerDay || !timerHour || !timerMin || !timerSec || timeLeft <= 0) {
+        clearInterval(timerInterval);
+        timer?.remove();
+        return;
+      }
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      timerDay.textContent = String(days);
+      timerHour.textContent = String(hours).padStart(2, '0');
+      timerMin.textContent = String(minutes).padStart(2, '0');
+      timerSec.textContent = String(seconds).padStart(2, '0');
+    }
+    timerUpdate();
+    timerInterval = setInterval(timerUpdate, 1000);
+    window.addEventListener('scroll', scrollHandler, { passive: true });
+  }
+
+  main();
+
+  document.addEventListener('astro:after-swap', main);
+</script>
+
+<style>
+  #timer.scrolled {
+    padding-block: 0.25rem;
+  }
+
+  .timer--header {
+    z-index: 10;
+  }
+
+  #timer:not(.timer--header) .timer__item > span:first-child {
+    font-size: 3rem;
+  }
+
+  .timer__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  #timer:not(.timer--header) .timer__label {
+    font-size: 1.5rem;
+  }
+
+  #timer.timer--header .timer__item {
+    font-size: 2rem;
+  }
+
+  #timer.timer--header .timer__label {
+    font-size: 1rem;
+  }
+
+  @media (min-width: theme('screens.md')) {
+    #timer:not(.timer--header) .timer__item > span:first-child {
+      font-size: 5rem;
+    }
+
+    #timer:not(.timer--header) .timer__item {
+      gap: 1rem;
+    }
+
+    #timer:not(.timer--header) .timer__label {
+      font-size: 2rem;
+    }
+  }
+</style>
