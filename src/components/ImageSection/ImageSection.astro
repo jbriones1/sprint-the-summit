@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+export interface ImageSectionProps {
+  id: string;
+  heading: string;
+  backgroundImage: ImageMetadata;
+  backgroundImageAlt: string;
+}
+
+const { id, heading, backgroundImage, backgroundImageAlt } = Astro.props as ImageSectionProps;
+---
+
+<section id={id} class="relative left-0 w-full overflow-hidden p-8 md:p-24">
+  <Image
+    src={backgroundImage}
+    alt={backgroundImageAlt}
+    densities={[1.5, 2, 3]}
+    class="absolute inset-0 min-h-full w-full min-w-full object-cover md:hidden"
+  />
+  <Image
+    src={backgroundImage}
+    alt={backgroundImageAlt}
+    densities={[1.5, 2, 3]}
+    class="absolute inset-0 hidden min-h-full w-full min-w-full object-cover md:block"
+  />
+  <div class="relative z-10 bg-white p-8"><h3 class="h3 mb-4">{heading}</h3><slot /></div>
+</section>

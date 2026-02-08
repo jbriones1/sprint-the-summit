@@ -1,4 +1,3 @@
-import { Image } from 'astro:assets';
 import card1 from '@assets/images/tfox-run-1.jpg';
 import card2 from '@assets/images/tfox-run-2.jpg';
 import card3 from '@assets/images/tfox-run-3.jpg';

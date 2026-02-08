@@ -11,8 +11,8 @@
 /* other imports into specific layers */
 @import './markdown-content.css' layer(components);
 @import './buttons.css' layer(components);
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -53,6 +53,10 @@
 
   .h3 {
     @apply font-heading-2 text-lg leading-tight font-medium tracking-widest uppercase md:text-2xl md:leading-tight;
+  }
+
+  .h4 {
+    @apply font-heading-2 leading-tight font-semibold tracking-widest uppercase md:text-lg md:leading-tight;
   }
 
   .description {
@@ -208,3 +212,4 @@
     @apply bg-background text-foreground;
   }
 }
+

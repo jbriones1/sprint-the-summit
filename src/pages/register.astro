@@ -1,0 +1,89 @@
+---
+import sfuAerial3 from '@assets/images/sfu-aerial-3.jpg';
+import tfox4 from '@assets/images/tfox-run-4.jpg';
+import tfox5 from '@assets/images/tfox-run-5.jpg';
+import tfox6 from '@assets/images/tfox-run-6.jpg';
+import Button from '@components/Button/Button.astro';
+import ImageSection from '@components/ImageSection/ImageSection.astro';
+import PageLayout from '@layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+---
+
+<PageLayout title={'Register'} description={'Register for Sprint the Summit.'}>
+  <div class="flex flex-col gap-20">
+    <div class="mt-4 flex justify-around">
+      <a class="transition hover:opacity-80" href="#schedule">
+        <Icon name="common/calendar" class="mx-auto size-24" />
+        <p class="h3 text-center">Schedule</p>
+      </a>
+      <a href="#kit" class="transition hover:opacity-80">
+        <Icon name="common/kit" class="mx-auto size-24" />
+        <p class="h3 text-center">Kit</p>
+      </a>
+      <a href="#tips" class="transition hover:opacity-80">
+        <Icon name="common/lightbulb" class="mx-auto size-24" />
+        <p class="h3 text-center">Tips</p>
+      </a>
+    </div>
+    <ImageSection
+      id="register"
+      heading="Register"
+      backgroundImage={sfuAerial3}
+      backgroundImageAlt="Aerial shot of SFU"
+    >
+      <div class="grid grid-rows-2 gap-8 md:grid-cols-2 md:grid-rows-1 md:gap-0">
+        <div class="border-primary-700 flex flex-col justify-between md:border-r md:pr-4">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quisquam maiores
+            doloribus saepe quidem non quod, expedita porro est excepturi, deleniti ratione.
+            Numquam, perspiciatis officia!
+          </p>
+          <Button variant="primary" class="mx-auto mt-6 px-10" href="/routes"> View Routes </Button>
+        </div>
+        <section id="schedule" class="flex scroll-mt-16 flex-col justify-between md:pl-4">
+          <div>
+            <h4 class="h4">Schedule</h4>
+            <ul class="mt-4 ml-4 list-outside list-disc">
+              <li><strong>Registration Deadline:</strong> March XX</li>
+              <li><strong>Kit Pickup:</strong> March XX</li>
+              <li>
+                <strong>Race Day:</strong>
+                March XX
+              </li>
+            </ul>
+          </div>
+          <Button variant="primary" class="mx-auto mt-6 px-10" href="/register">
+            Register Now
+          </Button>
+        </section>
+      </div>
+    </ImageSection>
+    <section id="kit">
+      <h3 class="h3">Race Kit</h3>
+      <ul class="mt-4 ml-4 list-outside list-disc">
+        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, similique?</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis omnis mollitia pariatur.
+        </li>
+      </ul>
+    </section>
+    <Image src={tfox4} alt="Finish line" densities={[1.5, 2, 3]} class="min-h-full w-full" />
+    <section id="tips">
+      <h3 class="h3">Tips</h3>
+      <ul class="mt-4 ml-4 list-outside list-disc">
+        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, similique?</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis omnis mollitia pariatur.
+        </li>
+      </ul>
+    </section>
+
+    <div class="grid grid-rows-2 gap-2 md:grid-cols-2">
+      <Image src={tfox5} alt="Terry Fox 5" densities={[1.5, 2, 3]} class="min-h-full w-full" />
+      <Image src={tfox6} alt="Terry Fox 6" densities={[1.5, 2, 3]} class="min-h-full w-full" />
+    </div>
+  </div>
+</PageLayout>
