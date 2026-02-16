@@ -21,7 +21,7 @@ const { startStyle = 'default', rest } = Astro.props as Props;
   {...rest}
 >
   <div class="mx-auto flex w-full" class:list={[{ 'text-base-900': startStyle === 'default' }]}>
-    <div class="site-container flex h-16 w-full items-center">
+    <div class="site-container flex h-[var(--nav-height)] w-full items-center">
       <header class="flex w-full items-center gap-2">
         <!-- home button / image -->
         <div class="flex flex-auto justify-start">
