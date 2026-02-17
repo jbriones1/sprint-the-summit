@@ -24,14 +24,14 @@ export interface RunRoute {
   backgroundImage={sfuAerial2}
   backgroundImageAlt="Route overview"
 >
-  <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 md:grid-rows-4">
-    <div class="bg-white p-8 md:row-span-4">
+  <div class="mx-auto grid grid-cols-1 gap-8 md:max-w-6xl md:grid-cols-2 md:grid-rows-4">
+    <div class="md:row-span-3">
       <Image
         src={route3}
         alt="Route Map"
         width={450}
         densities={[1.5, 2, 3]}
-        class="h-auto min-h-full w-full min-w-full object-contain"
+        class="h-auto w-full"
       />
     </div>
     <div class="flex flex-col justify-between bg-white p-8 md:row-span-3">
@@ -47,9 +47,9 @@ export interface RunRoute {
         <Button href="/register" class="text-lg" variant="primary">Register</Button>
       </div>
     </div>
-    <div class="grid place-items-center bg-white p-8">
-      <p class="text-3xl">
-        <span class="font-decorative text-primary-700 text-5xl">12 km</span> through ancestral
+    <div class="grid place-items-center bg-white p-8 md:col-span-2">
+      <p class="text-center text-3xl">
+        <span class="font-decorative text-primary-700 text-5xl">12 km</span> through beautiful, ancestral
         <span class="text-primary-700">Lhuḵw'lhuḵw'áyten</span>
         territory
       </p>
