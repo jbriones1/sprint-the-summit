@@ -4,7 +4,9 @@
  */
 
 import Button from '@components/Button/Button.astro';
-import routeData from '@config/routeData.json';
+import ImageSection from '@components/ImageSection/ImageSection.astro';
+import route3 from '@images/route-3.jpg';
+import sfuAerial2 from '@images/sfu-aerial-2.jpg';
 import { Image } from 'astro:assets';
 
 export interface RunRoute {
@@ -16,48 +18,41 @@ export interface RunRoute {
 }
 ---
 
-<section id="routes" class="mx-auto max-w-6xl scroll-mt-10 px-4 py-8 md:py-12">
-  <div class="mx-auto max-w-6xl text-center">
-    <h2 class="h2 text-pretty uppercase">Choose A Route</h2>
+<ImageSection
+  id="routes"
+  heading="Route Map"
+  backgroundImage={sfuAerial2}
+  backgroundImageAlt="Route overview"
+>
+  <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 md:grid-rows-4">
+    <div class="bg-white p-8 md:row-span-4">
+      <Image
+        src={route3}
+        alt="Route Map"
+        width={450}
+        densities={[1.5, 2, 3]}
+        class="h-auto min-h-full w-full min-w-full object-contain"
+      />
+    </div>
+    <div class="flex flex-col justify-between bg-white p-8 md:row-span-3">
+      <div>
+        <h2 class="h2 text-center">Route Info</h2>
+        <p class="text-lg">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus consequatur ex esse nisi
+          ea nemo temporibus alias, dolorum corrupti fuga accusantium sapiente magni deserunt, a
+          molestiae repudiandae. Odit, blanditiis soluta?
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <Button href="/register" class="text-lg" variant="primary">Register</Button>
+      </div>
+    </div>
+    <div class="grid place-items-center bg-white p-8">
+      <p class="text-3xl">
+        <span class="font-decorative text-primary-700 text-5xl">12 km</span> through ancestral
+        <span class="text-primary-700">Lhuḵw'lhuḵw'áyten</span>
+        territory
+      </p>
+    </div>
   </div>
-
-  <div
-    class="mx-auto grid w-full max-w-md gap-12 pt-8 sm:max-w-none sm:grid-cols-2 md:pt-12 lg:grid-cols-3"
-  >
-    {
-      routeData.map(route => (
-        <div class="flex w-full flex-col">
-          <div>
-            <div class="aspect-[3/4] h-auto w-full overflow-hidden">
-              <Image
-                src={route.cardImage}
-                alt={route.cardImageAlt}
-                width={450}
-                densities={[1.5, 2]}
-                class="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-          <div class="border-primary-500 flex h-full flex-col justify-between border-2 border-t-0 pt-10 pb-10">
-            <div>
-              <h3 class="h2 text-center">{route.name}</h3>
-
-              <ul class="mt-4 flex flex-col gap-3 px-8">
-                <li class="leading-snug lg:text-lg lg:leading-snug">
-                  Distance: {route.distance}km
-                </li>
-                <li class="leading-snug lg:text-lg lg:leading-snug">
-                  Elevation: {route.elevation}
-                </li>
-                <li class="leading-snug lg:text-lg lg:leading-snug">Terrain: {route.terrain}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      ))
-    }
-  </div>
-  <div class="mt-12 flex justify-center">
-    <Button href="/register" variant="primary">Register</Button>
-  </div>
-</section>
+</ImageSection>
