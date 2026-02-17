@@ -54,7 +54,7 @@
     '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif',
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --font-sans: 'Work Sans Variable', var(--font-fallback);
-  --font-heading-1: 'Montserrat Variable', var(--font-serif);
+  --font-heading-1: 'Bebas Neue', var(--font-serif);
   --font-heading-2: 'Raleway Variable', var(--font-fallback);
   --font-decorative: 'Bebas Neue', 'Montserrat Variable', var(--font-serif);
   --font-mono:

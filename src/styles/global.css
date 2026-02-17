@@ -109,6 +109,18 @@
   .logo-xs {
     @apply border-primary-600 h-32 w-32 rounded-full border-4 object-contain;
   }
+
+  .fade {
+    @apply bg-primary-900/55;
+  }
+
+  .h-header {
+    @apply h-[var(--h-header-sm)] md:h-[var(--h-header-md)];
+  }
+
+  .t-header {
+    @apply top-[var(--h-header-sm)] md:top-[var(--h-header-md)];
+  }
 }
 
 @layer utilities {
@@ -201,7 +213,9 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  --nav-height: calc(var(--spacing) * 18);
+  --h-header-sm: 10svh;
+  --h-header-md: 20svh;
+  --logo-sz: calc(var(--spacing) * 12);
 }
 
 .dark {
