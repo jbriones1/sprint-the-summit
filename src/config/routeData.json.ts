@@ -1,9 +1,9 @@
-import card1 from '@assets/images/tfox-run-1.jpg';
-import card2 from '@assets/images/tfox-run-2.jpg';
-import card3 from '@assets/images/tfox-run-3.jpg';
 import route1 from '@assets/images/route-1.png';
 import route2 from '@assets/images/route-2.png';
 import route3 from '@assets/images/route-3.jpg';
+import card1 from '@assets/images/tfox-run-1.jpg';
+import card2 from '@assets/images/tfox-run-2.jpg';
+import card3 from '@assets/images/tfox-run-3.jpg';
 
 export interface RouteData {
   name: string;

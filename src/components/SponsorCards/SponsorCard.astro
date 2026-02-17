@@ -1,0 +1,30 @@
+---
+import { type SponsorCard, type SponsorType } from '@config/sponsorData.json';
+import { Image } from 'astro:assets';
+
+export interface SponsorCardProps {
+  sponsor: SponsorCard;
+}
+
+const { sponsor } = Astro.props as SponsorCardProps;
+
+const typeMap: Record<SponsorType, string> = {
+  title: 'xl',
+  gold: 'lg',
+  silver: 'md',
+  bronze: 'sm',
+  kind: 'xs'
+};
+---
+
+<div>
+  <a class="block" href={sponsor.link} target="_blank">
+    <Image
+      src={sponsor.image}
+      alt={sponsor.title}
+      densities={[1.5, 2, 3]}
+      class:list={['hover-grow', `logo-${typeMap[sponsor.type]}`]}
+    />
+  </a>
+  <h3 class="h4 mt-2 text-center">{sponsor.title}</h3>
+</div>

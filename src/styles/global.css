@@ -89,6 +89,26 @@
   .nav__link--base {
     @apply font-heading-1 px-4 py-2 tracking-wide uppercase transition duration-200 hover:opacity-80;
   }
+
+  .logo-xl {
+    @apply border-primary-600 h-64 w-64 rounded-full border-4 object-contain;
+  }
+
+  .logo-lg {
+    @apply border-primary-600 h-56 w-56 rounded-full border-4 object-contain;
+  }
+
+  .logo-md {
+    @apply border-primary-600 h-48 w-48 rounded-full border-4 object-contain;
+  }
+
+  .logo-sm {
+    @apply border-primary-600 h-40 w-40 rounded-full border-4 object-contain;
+  }
+
+  .logo-xs {
+    @apply border-primary-600 h-32 w-32 rounded-full border-4 object-contain;
+  }
 }
 
 @layer utilities {
@@ -99,6 +119,10 @@
 
   .rotate-180 {
     @apply rotate-180;
+  }
+
+  .hover-grow {
+    @apply scale-100 cursor-pointer transition-transform duration-300 ease-out hover:scale-105;
   }
 }
 

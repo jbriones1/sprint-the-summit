@@ -1,10 +1,9 @@
 ---
 /**
- * * Sponsors section
+ * * Sponsors marquee
  */
 
-import landy from '@assets/images/landy-1.png';
-import sfssLogo from '@assets/images/sfss-logo-small.png';
+import { getGoldSponsors } from '@config/sponsorData.json';
 import { Marquee, MarqueeContent } from '@ui/marquee';
 import { Image } from 'astro:assets';
 ---
@@ -15,10 +14,16 @@ import { Image } from 'astro:assets';
   </div>
   <Marquee class="mt-8">
     <MarqueeContent>
-      <Image src={landy} alt="Landy" class="w-16" />
-      <Image src={sfssLogo} alt="SFSS" />
-      <Image src={landy} alt="Landy" class="w-16" />
-      <Image src={sfssLogo} alt="SFSS" />
+      {
+        getGoldSponsors().map(sponsor => (
+          <Image src={sponsor.image} alt={sponsor.title} class="w-24 object-contain" />
+        ))
+      }
+      {
+        getGoldSponsors().map(sponsor => (
+          <Image src={sponsor.image} alt={sponsor.title} class="w-24 object-contain" />
+        ))
+      }
     </MarqueeContent>
   </Marquee>
 </section>
