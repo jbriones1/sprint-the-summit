@@ -1,0 +1,58 @@
+---
+import Button from '@components/Button/Button.astro';
+import { Image } from 'astro:assets';
+
+interface FeatureCardProps {
+  title: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  href?: string;
+  buttonText?: string;
+  isImageOnRight?: boolean; // Move the image to the right side
+  bgColour?: string; // Custom background color for the card
+  externalLink?: boolean; // Whether the link should open in a new tab
+}
+
+const {
+  title,
+  image,
+  imageAlt,
+  href,
+  buttonText,
+  isImageOnRight,
+  bgColour,
+  externalLink: isExternalLink
+} = Astro.props as FeatureCardProps;
+---
+
+<div class="mt-12 scroll-mt-10 p-8 md:p-12" class:list={[{ 'bg-base-100': !bgColour }, bgColour]}>
+  <div class="mx-auto text-center">
+    <h2 class="h2 text-pretty uppercase">{title}</h2>
+  </div>
+  <div class="grid grid-cols-1 gap-10 pt-8 md:grid-cols-2">
+    <Image
+      src={image}
+      alt={imageAlt}
+      densities={[1.5, 2, 3]}
+      class="h-auto min-h-full w-full min-w-full object-cover"
+      class:list={[{ 'md:col-start-2': isImageOnRight }]}
+    />
+    <div
+      class="flex h-full flex-col justify-between gap-y-6"
+      class:list={[{ 'md:col-start-1': isImageOnRight, 'md:row-start-1': isImageOnRight }]}
+    >
+      <div class="text-base-content/80 text-lg">
+        <slot />
+      </div>
+      {
+        href && buttonText && (
+          <div class="mt-12 flex justify-center">
+            <Button href={href} target={isExternalLink ? '_blank' : ''} variant="primary">
+              {buttonText}
+            </Button>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</div>

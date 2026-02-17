@@ -1,0 +1,7 @@
+---
+import { Image } from 'astro:assets';
+const { class: classes, ...rest } = Astro.props;
+import route3 from '@images/route-3.jpg';
+---
+
+<Image src={route3} alt="Route Map" width={450} densities={[1.5, 2, 3]} class={classes} {...rest} />

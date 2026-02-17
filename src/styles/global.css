@@ -78,7 +78,7 @@
   }
 
   section[id] {
-    scroll-margin-top: 4rem;
+    @apply scroll-mt-7 md:scroll-mt-33;
   }
 
   .flex-grid {

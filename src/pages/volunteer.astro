@@ -1,29 +1,22 @@
 ---
-import Button from '@components/Button/Button.astro';
+import FeatureCard from '@components/FeatureCard/FeatureCard.astro';
 import volunteer2 from '@images/volunteer-2.jpg';
 import PageLayout from '@layouts/PageLayout.astro';
-import { Image } from 'astro:assets';
 ---
 
 <PageLayout title={'Volunteer'} description={'Help out with the event!'}>
-  <div class="bg-base-100 flex-grid mt-4 p-8">
-    <Image
-      src={volunteer2}
-      alt="Volunteers"
-      densities={[1.5, 2, 3]}
-      class="h-auto min-h-full w-full min-w-full object-cover"
-    />
-    <div class="flex flex-col justify-between">
-      <h3 class="h3 mb-4">Make this event a success</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident est animi qui veritatis?
-        Maiores sint, harum tempora, minus exercitationem quas eius asperiores voluptatum quae quam
-        possimus itaque minima ratione sunt facilis nesciunt iure deleniti amet repellat veniam,
-        laborum atque. Culpa facilis velit vel quaerat ipsum corrupti alias officiis at et.
-      </p>
-      <div class="flex justify-center">
-        <Button href="/register" variant="primary" class="mt-12 w-fit">Volunteer</Button>
-      </div>
-    </div>
-  </div>
+  <section class="site-container">
+    <FeatureCard
+      title="Help make this event a success"
+      image={volunteer2}
+      imageAlt="Volunteers"
+      href="/volunteer"
+      buttonText="Join our team"
+    >
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, similique vero! Earum quae
+      quam blanditiis? Veritatis explicabo officia illum ab enim facere reiciendis assumenda nulla
+      voluptate dolorem quos placeat animi praesentium odit ratione voluptatibus, quae itaque optio
+      ut ea atque pariatur cumque nisi ipsam. Deserunt perspiciatis libero aperiam eius quod!
+    </FeatureCard>
+  </section>
 </PageLayout>

@@ -5,9 +5,8 @@
 
 import Button from '@components/Button/Button.astro';
 import ImageSection from '@components/ImageSection/ImageSection.astro';
-import route3 from '@images/route-3.jpg';
+import RouteMap from '@components/RouteMap/RouteMap.astro';
 import sfuAerial2 from '@images/sfu-aerial-2.jpg';
-import { Image } from 'astro:assets';
 
 export interface RunRoute {
   name: string;
@@ -18,21 +17,10 @@ export interface RunRoute {
 }
 ---
 
-<ImageSection
-  id="routes"
-  heading="Route Map"
-  backgroundImage={sfuAerial2}
-  backgroundImageAlt="Route overview"
->
+<ImageSection id="routes" backgroundImage={sfuAerial2} backgroundImageAlt="Route overview">
   <div class="mx-auto grid grid-cols-1 gap-8 md:max-w-6xl md:grid-cols-2 md:grid-rows-4">
     <div class="md:row-span-3">
-      <Image
-        src={route3}
-        alt="Route Map"
-        width={450}
-        densities={[1.5, 2, 3]}
-        class="h-auto w-full"
-      />
+      <RouteMap class="h-auto w-full" />
     </div>
     <div class="flex flex-col justify-between bg-white p-8 md:row-span-3">
       <div>
@@ -43,7 +31,8 @@ export interface RunRoute {
           molestiae repudiandae. Odit, blanditiis soluta?
         </p>
       </div>
-      <div class="flex justify-center">
+      <div class="mt-4 flex justify-center gap-4">
+        <Button href="/info" class="text-lg" variant="primary">Learn More</Button>
         <Button href="/register" class="text-lg" variant="primary">Register</Button>
       </div>
     </div>

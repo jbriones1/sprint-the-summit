@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Tricon {
+  href: string;
+  descriptor: string;
+  iconName: string;
+}
+
+interface TriconProps {
+  icons: Tricon[];
+}
+
+const { icons } = Astro.props as TriconProps;
+
+const iconsToShow = icons.slice(0, 3);
+---
+
+<div
+  class="mt-4 grid grid-rows-1 items-center"
+  class:list={[
+    { 'grid-cols-1': iconsToShow.length === 1 },
+    { 'grid-cols-2': iconsToShow.length === 2 },
+    { 'grid-cols-3': iconsToShow.length === 3 }
+  ]}
+>
+  {
+    iconsToShow.map(({ href, descriptor, iconName }) => (
+      <div class="flex flex-col items-center">
+        <a class="w-16 transition hover:opacity-80 md:w-24" href={href}>
+          <Icon name={iconName} class="mx-auto size-16 md:size-24" />
+        </a>
+        <p class="h3 text-center">{descriptor}</p>
+      </div>
+    ))
+  }
+</div>

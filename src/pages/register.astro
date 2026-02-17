@@ -4,28 +4,33 @@ import tfox4 from '@assets/images/tfox-run-4.jpg';
 import tfox5 from '@assets/images/tfox-run-5.jpg';
 import tfox6 from '@assets/images/tfox-run-6.jpg';
 import Button from '@components/Button/Button.astro';
+import Tricon from '@components/FeatureCard/Tricon.astro';
 import ImageSection from '@components/ImageSection/ImageSection.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
+
+const icons = [
+  {
+    href: '#schedule',
+    descriptor: 'Schedule',
+    iconName: 'common/calendar'
+  },
+  {
+    href: '#kit',
+    descriptor: 'Kit',
+    iconName: 'common/kit'
+  },
+  {
+    href: '#tips',
+    descriptor: 'Tips',
+    iconName: 'common/lightbulb'
+  }
+];
 ---
 
 <PageLayout title={'Register'} description={'Register for Sprint the Summit.'}>
   <div class="flex flex-col gap-10">
-    <div class="mt-4 grid grid-cols-3 items-center">
-      <a class="transition hover:opacity-80" href="#schedule">
-        <Icon name="common/calendar" class="mx-auto size-16 md:size-24" />
-        <p class="h3 text-center">Schedule</p>
-      </a>
-      <a href="#kit" class="transition hover:opacity-80">
-        <Icon name="common/kit" class="mx-auto size-16 md:size-24" />
-        <p class="h3 text-center">Kit</p>
-      </a>
-      <a href="#tips" class="transition hover:opacity-80">
-        <Icon name="common/lightbulb" class="mx-auto size-16 md:size-24" />
-        <p class="h3 text-center">Tips</p>
-      </a>
-    </div>
+    <Tricon icons={icons} />
     <ImageSection
       id="register"
       backgroundImage={sfuAerial3}
