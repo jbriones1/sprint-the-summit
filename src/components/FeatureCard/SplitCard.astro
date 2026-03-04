@@ -1,0 +1,20 @@
+---
+interface SplitCardProps {
+  title: string;
+}
+const { title } = Astro.props as SplitCardProps;
+---
+
+<div class="bg-base-100 mt-12 scroll-mt-10 p-8 md:p-12">
+  <div class="mx-auto text-center">
+    <h2 class="h2 text-pretty uppercase">{title}</h2>
+  </div>
+  <div class="grid grid-rows-2 gap-8 pt-8 md:grid-cols-2 md:grid-rows-1 md:gap-0">
+    <div class="border-primary-700 flex h-full flex-col justify-between md:border-r md:pr-4">
+      <slot name="first" />
+    </div>
+    <section id="schedule" class="flex flex-col justify-between md:pl-4">
+      <slot name="second" />
+    </section>
+  </div>
+</div>
