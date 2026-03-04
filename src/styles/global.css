@@ -9,7 +9,6 @@
 @import './tailwind-theme.css';
 
 /* other imports into specific layers */
-@import './markdown-content.css' layer(components);
 @import './buttons.css' layer(components);
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
