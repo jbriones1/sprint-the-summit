@@ -27,7 +27,7 @@ const iconsToShow = icons.slice(0, 3);
   {
     iconsToShow.map(({ href, descriptor, iconName }) => (
       <div class="flex flex-col items-center">
-        <a class="w-16 transition hover:opacity-80 md:w-24" href={href}>
+        <a class="transition hover:opacity-80" href={href}>
           <Icon name={iconName} class="mx-auto size-16 md:size-24" />
           <p class="h3 text-center">{descriptor}</p>
         </a>

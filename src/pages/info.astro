@@ -1,8 +1,8 @@
 ---
 import FeatureCard from '@components/FeatureCard/FeatureCard.astro';
 import Tricon from '@components/FeatureCard/Tricon.astro';
+import VenueMap from '@components/FeatureCard/VenueMap.astro';
 import route3 from '@images/route-3.jpg';
-import venue from '@images/venue-map.jpg';
 import PageLayout from '@layouts/PageLayout.astro';
 
 const icons = [
@@ -31,19 +31,6 @@ const icons = [
     </FeatureCard>
   </section>
   <section id="venue">
-    <FeatureCard title="Venue Map" image={venue} imageAlt="Venue map" isImageOnRight={true}>
-      <p>Make sure you know about these important areas:</p>
-      <ul class="ml-4 list-outside list-disc">
-        <li>Starting Area</li>
-        <li>First Aid Station</li>
-        <li>Souvenir Store</li>
-        <li>Sponsor Booths</li>
-      </ul>
-      <br />
-      <p>
-        The main event hub runs from 10:00am–5:00pm at Gravel Parking with food trucks, vendors,
-        sponsor tents, and live music throughout the day.
-      </p>
-    </FeatureCard>
+    <VenueMap />
   </section>
 </PageLayout>

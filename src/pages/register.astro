@@ -4,7 +4,9 @@ import tfox4 from '@assets/images/tfox-run-4.jpg';
 import tfox5 from '@assets/images/tfox-run-5.jpg';
 import tfox6 from '@assets/images/tfox-run-6.jpg';
 import Button from '@components/Button/Button.astro';
+import FeatureCard from '@components/FeatureCard/FeatureCard.astro';
 import Tricon from '@components/FeatureCard/Tricon.astro';
+import VenueMap from '@components/FeatureCard/VenueMap.astro';
 import ImageSection from '@components/ImageSection/ImageSection.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
@@ -16,8 +18,8 @@ const icons = [
     iconName: 'common/calendar'
   },
   {
-    href: '#kit',
-    descriptor: 'Kit',
+    href: '#placard',
+    descriptor: 'Placard',
     iconName: 'common/kit'
   },
   {
@@ -41,9 +43,9 @@ const icons = [
         <div class="grid grid-rows-2 gap-8 md:grid-cols-2 md:grid-rows-1 md:gap-0">
           <div class="border-primary-700 flex h-full flex-col justify-between md:border-r md:pr-4">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quisquam maiores
-              doloribus saepe quidem non quod, expedita porro est excepturi, deleniti ratione.
-              Numquam, perspiciatis officia!
+              Register for Sprint the Summit — SFU Burnaby’s inaugural 12 km run on March 20, 2026.
+              Tickets are $10, and 100% of ticket revenue will be reinvested into charitable
+              foundations (such as Make-A-Wish) to support the next generation of students.
             </p>
             <Button variant="primary" class="mx-auto mt-6 px-10" href="/routes">
               View Routes
@@ -53,11 +55,9 @@ const icons = [
             <div>
               <h4 class="h4">Schedule</h4>
               <ul class="mt-4 ml-4 list-outside list-disc">
-                <li><strong>Registration Deadline:</strong> March XX</li>
-                <li><strong>Kit Pickup:</strong> March XX</li>
                 <li>
                   <strong>Race Day:</strong>
-                  March XX
+                  March 20, 2026 (10AM-5:00PM)
                 </li>
               </ul>
             </div>
@@ -68,8 +68,9 @@ const icons = [
         </div>
       </div>
     </ImageSection>
+
     <section id="kit">
-      <h3 class="h3">Race Kit</h3>
+      <h3 class="h3">Race Placards</h3>
       <ul class="mt-4 ml-4 list-outside list-disc">
         <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, similique?</li>
         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -78,14 +79,18 @@ const icons = [
         </li>
       </ul>
     </section>
+    <VenueMap />
     <Image src={tfox4} alt="Finish line" densities={[1.5, 2, 3]} class="min-h-full w-full" />
     <section id="tips">
       <h3 class="h3">Tips</h3>
       <ul class="mt-4 ml-4 list-outside list-disc">
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, similique?</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Arrive early to find parking, check in smoothly, and warm up before the start.</li>
         <li>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis omnis mollitia pariatur.
+          Dress for variable Burnaby Mountain weather (layers recommended) and bring a refillable
+          water bottle.
+        </li>
+        <li>
+          Follow volunteer/traffic-controller direction and use water stations along the route.
         </li>
       </ul>
     </section>
