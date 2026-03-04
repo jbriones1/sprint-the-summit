@@ -10,10 +10,10 @@ interface Props {
 const { navItem } = Astro.props as Props;
 ---
 
-<li class="mobile-nav__dropdown group relative">
+<li class="mobile-nav__dropdown group relative text-white">
   <button
     class:list={[
-      'nav__link--base mobile-nav__dropdown-button flex w-full flex-1 items-center justify-between',
+      'nav__link--base mobile-nav__dropdown-button flex w-full flex-1 items-center justify-between'
     ]}
     type="button"
     aria-label={`${navItem.text} dropdown menu`}
@@ -32,7 +32,7 @@ const { navItem } = Astro.props as Props;
     class="mobile-nav__dropdown-content hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
   >
     <ul class="mb-2 transition-[height]">
-      {navItem.dropdown.map((dropdownItem) => <NavLink navItem={dropdownItem} class="ml-2" />)}
+      {navItem.dropdown.map(dropdownItem => <NavLink navItem={dropdownItem} class="ml-2" />)}
     </ul>
   </div>
 </li>
@@ -40,21 +40,21 @@ const { navItem } = Astro.props as Props;
 <script>
   function mobileNavDropdownSetup() {
     const dropdownMenus = document.querySelectorAll(
-      '.mobile-nav__dropdown',
+      '.mobile-nav__dropdown'
     ) as NodeListOf<HTMLElement>;
-    dropdownMenus.forEach((dropdownMenu) => {
+    dropdownMenus.forEach(dropdownMenu => {
       const dropdownButton = dropdownMenu.querySelector(
-        '.mobile-nav__dropdown-button',
+        '.mobile-nav__dropdown-button'
       ) as HTMLElement;
       const dropdownChevron = dropdownMenu.querySelector(
-        '.mobile-nav__dropdown-chevron',
+        '.mobile-nav__dropdown-chevron'
       ) as HTMLElement;
       const dropdownContent = dropdownMenu.querySelector(
-        '.mobile-nav__dropdown-content',
+        '.mobile-nav__dropdown-content'
       ) as HTMLElement;
 
       if (dropdownButton && dropdownContent && dropdownChevron) {
-        dropdownButton.addEventListener('click', (event) => {
+        dropdownButton.addEventListener('click', event => {
           if (!dropdownMenu.classList.contains('active')) {
             // if dropdown is currently closed, so open it
             dropdownMenu.classList.add('active');

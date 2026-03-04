@@ -15,11 +15,12 @@ const { text, link, newTab = false } = navItem;
 <li>
   <a
     class:list={[
+      'text-white',
       `nav__link--base flex w-full items-center ${className}`,
       {
         // styling for current active page link
-        '': Astro.url.pathname === link,
-      },
+        '': Astro.url.pathname === link
+      }
     ]}
     href={link}
     target={newTab ? '_blank' : ''}

@@ -20,7 +20,7 @@ const { startStyle = 'default', rest } = Astro.props as Props;
   transition:name={`nav`}
   {...rest}
 >
-  <div class="mx-auto flex w-full" class:list={[{ 'text-base-900': startStyle === 'default' }]}>
+  <div class="mx-auto flex w-full" class:list={[{ 'text-white': startStyle === 'default' }]}>
     <div class="site-container h flex w-full items-center">
       <header class="flex w-full items-center gap-2">
         <!-- home button / image -->
@@ -37,7 +37,7 @@ const { startStyle = 'default', rest } = Astro.props as Props;
                 navData.map(navItem =>
                   'dropdown' in navItem ? (
                     // non-mobile dropdown menu
-                    <NavDropdown navItem={navItem} class="text-base-900" />
+                    <NavDropdown navItem={navItem} />
                   ) : (
                     // normal nav link
                     <NavLink {navItem} class="h-10 text-3xl" />

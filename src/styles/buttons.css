@@ -6,14 +6,13 @@
 }
 
 .button--primary {
-  @apply bg-primary-600 text-base-50;
+  @apply bg-primary-600 text-white;
   @apply hover:bg-primary-600/80;
   @apply focus-visible:ring-primary-600;
 }
 
 .button--secondary {
   @apply border-2;
-  /* @apply hover:border-opacity-80; */
   @apply focus-visible:ring-primary-200;
 }
 

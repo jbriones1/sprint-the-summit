@@ -22,7 +22,7 @@ const {
   title,
   description,
   heroImage,
-  noindex = false,
+  noindex = false
 } = Astro.props as Props;
 ---
 
@@ -37,7 +37,7 @@ const {
       noindex={noindex}
     />
   </head>
-  <body id="body" class="bg-base-50 text-base-900">
+  <body id="body" class="bg-base-50 text-white">
     <div class="min-h-[100lvh]">
       <Nav startStyle={navStartStyle} />
       <main>
