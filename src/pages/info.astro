@@ -2,6 +2,7 @@
 import FeatureCard from '@components/FeatureCard/FeatureCard.astro';
 import Tricon from '@components/FeatureCard/Tricon.astro';
 import route3 from '@images/route-3.jpg';
+import venue from '@images/venue-map.jpg';
 import PageLayout from '@layouts/PageLayout.astro';
 
 const icons = [
@@ -22,14 +23,15 @@ const icons = [
   <Tricon icons={icons} />
   <section id="info">
     <FeatureCard title="Route Info" image={route3} imageAlt="Route Info" bgColour="white">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, similique vero! Earum quae
-      quam blanditiis? Veritatis explicabo officia illum ab enim facere reiciendis assumenda nulla
-      voluptate dolorem quos placeat animi praesentium odit ratione voluptatibus, quae itaque optio
-      ut ea atque pariatur cumque nisi ipsam. Deserunt perspiciatis libero aperiam eius quod!
+      The Sprint the Summit route is a 12 km loop across Burnaby Mountain on March 20, 2026. The
+      course is designed to be welcoming for first-time runners and experienced runners alike, with
+      route signage, volunteers, and safety supports along the way. Runners will pass through the
+      ancestral Lhuḵw’lhuḵw’áyten territory and experience some of the best views and forested paths
+      Burnaby Mountain has to offer.
     </FeatureCard>
   </section>
   <section id="venue">
-    <FeatureCard title="Venue Map" image={route3} imageAlt="Venue map" isImageOnRight={true}>
+    <FeatureCard title="Venue Map" image={venue} imageAlt="Venue map" isImageOnRight={true}>
       <p>Make sure you know about these important areas:</p>
       <ul class="ml-4 list-outside list-disc">
         <li>Starting Area</li>
@@ -37,6 +39,11 @@ const icons = [
         <li>Souvenir Store</li>
         <li>Sponsor Booths</li>
       </ul>
+      <br />
+      <p>
+        The main event hub runs from 10:00am–5:00pm at Gravel Parking with food trucks, vendors,
+        sponsor tents, and live music throughout the day.
+      </p>
     </FeatureCard>
   </section>
 </PageLayout>
