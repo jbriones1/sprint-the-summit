@@ -3,7 +3,7 @@
  * * Organized by section
  */
 
-import profileImage from '@assets/images/landy-1.png';
+import sfssLogo from '@assets/images/sfss-logo.png';
 import { Image } from 'astro:assets';
 ---
 
@@ -11,30 +11,18 @@ import { Image } from 'astro:assets';
   <h2 class="h3 text-primary-500 text-pretty uppercase">Organized by the SFSS</h2>
   <div class="flex flex-col md:flex-row">
     <div class="md:w-2/3">
-      <h3 class="h2 mt-4">Landy Liu</h3>
       <div class="bg-base-100 mt-8 p-8 md:mb-20 lg:text-lg">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ratione deleniti
-          voluptatem esse quam fugiat nemo sit animi, omnis possimus mollitia distinctio autem est
-          voluptates accusamus facilis tenetur quia perferendis assumenda commodi, et laborum eum
-          cum. Tempore, ex, excepturi deserunt quidem, laudantium aspernatur perspiciatis fugiat
-          ipsa ab sit officiis quam.
+          Sprint the Summit is hosted by the Simon Fraser Student Society (SFSS), representing
+          25,000+ students across 360+ SFU programs. The SFSS runs major campus events and community
+          initiatives focused on student life, wellness, and connection — and Sprint the Summit is
+          our newest effort to inspire healthy, active living and build a lasting Burnaby Mountain
+          tradition.
         </p>
-        <div class="flex w-3/4 justify-end">
-          <p class="font-heading-1 text-3xl italic">- Landy</p>
-        </div>
       </div>
     </div>
-    <div class="mr-auto max-w-md md:w-1/3 md:max-w-none">
-      <div class="my-auto aspect-[3/4] w-full overflow-hidden">
-        <Image
-          src={profileImage}
-          alt="Landy Liu"
-          width={450}
-          densities={[1.5, 2]}
-          class="h-auto min-h-full w-full min-w-full object-cover"
-        />
-      </div>
+    <div class="mr-auto flex max-w-md justify-center p-4 md:w-1/3 md:max-w-none">
+      <Image src={sfssLogo} alt="SFSS Logo" densities={[1.5, 2]} class="object-contain" />
     </div>
   </div>
 </section>
