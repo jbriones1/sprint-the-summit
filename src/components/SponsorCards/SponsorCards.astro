@@ -12,33 +12,34 @@ import SponsorCard from './SponsorCard.astro';
 
 <section id="sponsor-cards" class="grid gap-12">
   <div>
-    <h3 class="h3 text-center">Title</h3>
-    <div class="flex flex-wrap justify-center gap-4 p-4">
-      {getTitleSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)}
-    </div>
-  </div>
-  <div>
-    <h3 class="h3 text-center">Gold</h3>
-    <div class="flex flex-wrap justify-center gap-4 p-4">
-      {getGoldSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)}
-    </div>
-  </div>
-  <div>
-    <h3 class="h3 text-center">Silver</h3>
-    <div class="flex flex-wrap justify-center gap-4 p-4">
-      {getSilverSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)}
-    </div>
-  </div>
-  <div>
-    <h3 class="h3 text-center">Bronze</h3>
-    <div class="flex flex-wrap justify-center gap-4 p-4">
-      {getBronzeSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)}
-    </div>
-  </div>
-  <div>
-    <h3 class="h3 text-center">In Kind</h3>
-    <div class="flex flex-wrap justify-center gap-4 p-4">
-      {getKindSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)}
+    <!--   <h3 class="h3 text-center">Title</h3> -->
+    <!--   <div class="flex flex-wrap justify-center gap-4 p-4"> -->
+    <!--     {getTitleSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)} -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <!-- <div> -->
+    <!--   <h3 class="h3 text-center">Gold</h3> -->
+    <!--   <div class="flex flex-wrap justify-center gap-4 p-4"> -->
+    <!--     {getGoldSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)} -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <!-- <div> -->
+    <!--   <h3 class="h3 text-center">Silver</h3> -->
+    <!--   <div class="flex flex-wrap justify-center gap-4 p-4"> -->
+    <!--     {getSilverSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)} -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <!-- <div> -->
+    <!--   <h3 class="h3 text-center">Bronze</h3> -->
+    <!--   <div class="flex flex-wrap justify-center gap-4 p-4"> -->
+    <!--     {getBronzeSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)} -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <div>
+      <h3 class="h3 text-center">In Kind</h3>
+      <div class="flex flex-wrap justify-center gap-4 p-4">
+        {getKindSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)}
+      </div>
     </div>
   </div>
 </section>
