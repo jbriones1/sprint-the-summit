@@ -1,6 +1,3 @@
-import landy from '@assets/images/landy-1.png';
-import sfssLogo from '@assets/images/sfss-logo-small.png';
-import sfuLogo from '@assets/images/SFU-block-logo.png';
 import makeAWish from '@assets/images/sponsors/make-a-wish.svg';
 import cornerstone from '@assets/images/sponsors/cornerstone.png';
 import nativeShoes from '@assets/images/sponsors/native-shoes.png';
@@ -21,7 +18,7 @@ export interface SponsorCard {
 export const sponsors: SponsorCard[] = [
   {
     image: makeAWish,
-    title: 'Make a Wish',
+    title: 'Make-A-Wish',
     type: 'title',
     link: 'https://makeawish.ca/'
   },
