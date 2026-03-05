@@ -4,7 +4,6 @@ import tfox4 from '@assets/images/tfox-run-4.jpg';
 import tfox5 from '@assets/images/tfox-run-5.jpg';
 import tfox6 from '@assets/images/tfox-run-6.jpg';
 import Button from '@components/Button/Button.astro';
-import FeatureCard from '@components/FeatureCard/FeatureCard.astro';
 import Tricon from '@components/FeatureCard/Tricon.astro';
 import VenueMap from '@components/FeatureCard/VenueMap.astro';
 import ImageSection from '@components/ImageSection/ImageSection.astro';
@@ -16,11 +15,6 @@ const icons = [
     href: '#schedule',
     descriptor: 'Schedule',
     iconName: 'common/calendar'
-  },
-  {
-    href: '#placard',
-    descriptor: 'Placard',
-    iconName: 'common/kit'
   },
   {
     href: '#tips',
@@ -47,9 +41,7 @@ const icons = [
               Tickets are $10, and 100% of ticket revenue will be reinvested into charitable
               foundations (such as Make-A-Wish) to support the next generation of students.
             </p>
-            <Button variant="primary" class="mx-auto mt-6 px-10" href="/routes">
-              View Routes
-            </Button>
+            <Button variant="primary" class="mx-auto mt-6 px-10" href="/info"> View Routes </Button>
           </div>
           <section id="schedule" class="flex flex-col justify-between md:pl-4">
             <div>
@@ -74,16 +66,6 @@ const icons = [
       </div>
     </ImageSection>
 
-    <section id="kit">
-      <h3 class="h3">Race Placards</h3>
-      <ul class="mt-4 ml-4 list-outside list-disc">
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, similique?</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-        <li>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis omnis mollitia pariatur.
-        </li>
-      </ul>
-    </section>
     <VenueMap />
     <Image src={tfox4} alt="Finish line" densities={[1.5, 2, 3]} class="min-h-full w-full" />
     <section id="tips">
