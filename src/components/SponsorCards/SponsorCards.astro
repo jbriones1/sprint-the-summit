@@ -1,9 +1,9 @@
 ---
 import {
-  getBronzeSponsors,
-  getGoldSponsors,
+  // getBronzeSponsors,
+  // getGoldSponsors,
   getKindSponsors,
-  getSilverSponsors,
+  // getSilverSponsors,
   getTitleSponsors
 } from '@config/sponsorData.json';
 
@@ -12,10 +12,10 @@ import SponsorCard from './SponsorCard.astro';
 
 <section id="sponsor-cards" class="grid gap-12">
   <div>
-    <!--   <h3 class="h3 text-center">Title</h3> -->
-    <!--   <div class="flex flex-wrap justify-center gap-4 p-4"> -->
-    <!--     {getTitleSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)} -->
-    <!--   </div> -->
+    <h3 class="h3 text-base-950 text-center">Title</h3>
+    <div class="flex flex-wrap justify-center gap-4 p-4">
+      {getTitleSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)}
+    </div>
     <!-- </div> -->
     <!-- <div> -->
     <!--   <h3 class="h3 text-center">Gold</h3> -->
@@ -36,7 +36,7 @@ import SponsorCard from './SponsorCard.astro';
     <!--   </div> -->
     <!-- </div> -->
     <div>
-      <h3 class="h3 text-center">In Kind</h3>
+      <h3 class="h3 text-base-950 text-center">In Kind</h3>
       <div class="flex flex-wrap justify-center gap-4 p-4">
         {getKindSponsors().map(sponsor => <SponsorCard sponsor={sponsor} />)}
       </div>
