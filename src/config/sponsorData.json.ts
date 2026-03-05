@@ -1,6 +1,12 @@
 import landy from '@assets/images/landy-1.png';
 import sfssLogo from '@assets/images/sfss-logo-small.png';
 import sfuLogo from '@assets/images/SFU-block-logo.png';
+import cornerstone from '@assets/images/sponsors/cornerstone.png';
+import nativeShoes from '@assets/images/sponsors/native-shoes.png';
+import cascadeTents from '@assets/images/sponsors/cascade-tents.png';
+import sfuRunClub from '@assets/images/sponsors/sfu-run-club.png';
+import girlInTheWild from '@assets/images/sponsors/girl-in-the-wild.png';
+import whitecaps from '@assets/images/sponsors/whitecaps.png';
 
 export type SponsorType = 'title' | 'gold' | 'silver' | 'bronze' | 'kind';
 
@@ -13,94 +19,40 @@ export interface SponsorCard {
 
 export const sponsors: SponsorCard[] = [
   {
-    image: sfssLogo,
-    title: 'SFSS',
-    type: 'title',
-    link: 'https://sfss.ca'
-  },
-  {
-    image: landy,
-    title: 'Landy Liu',
-    type: 'title',
-    link: 'https://sfss.ca'
-  },
-  {
-    image: sfssLogo,
-    title: 'SFSS',
-    type: 'gold',
-    link: 'https://sfss.ca'
-  },
-  {
-    image: sfuLogo,
-    title: 'SFU',
-    type: 'title',
-    link: 'https://sfu.ca'
-  },
-  {
-    image: landy,
-    title: 'Landy Liu',
-    type: 'gold',
-    link: 'https://sfss.ca'
-  },
-  {
-    image: sfuLogo,
-    title: 'SFU',
-    type: 'gold',
-    link: 'https://sfu.ca'
-  },
-  {
-    image: sfssLogo,
-    title: 'SFSS',
-    type: 'silver',
-    link: 'https://sfss.ca'
-  },
-  {
-    image: landy,
-    title: 'Landy Liu',
-    type: 'silver',
-    link: 'https://sfss.ca'
-  },
-  {
-    image: sfuLogo,
-    title: 'SFU',
-    type: 'silver',
-    link: 'https://sfu.ca'
-  },
-  {
-    image: sfssLogo,
-    title: 'SFSS',
-    type: 'bronze',
-    link: 'https://sfss.ca'
-  },
-  {
-    image: landy,
-    title: 'Landy Liu',
-    type: 'bronze',
-    link: 'https://sfss.ca'
-  },
-  {
-    image: sfuLogo,
-    title: 'SFU',
-    type: 'bronze',
-    link: 'https://sfu.ca'
-  },
-  {
-    image: sfssLogo,
-    title: 'SFSS',
+    image: cornerstone,
+    title: 'Cornerstone Printing',
     type: 'kind',
-    link: 'https://sfss.ca'
+    link: 'https://printcornerstone.com'
   },
   {
-    image: landy,
-    title: 'Landy Liu',
+    image: nativeShoes,
+    title: 'Native Shoes',
     type: 'kind',
-    link: 'https://sfss.ca'
+    link: 'https://www.nativeshoes.com/ca'
   },
   {
-    image: sfuLogo,
-    title: 'SFU',
+    image: cascadeTents,
+    title: 'Cascade Tents',
     type: 'kind',
-    link: 'https://sfu.ca'
+    link: 'https://www.cascadetentrentals.com/'
+  },
+  {
+    image: sfuRunClub,
+    title: 'SFU Running Club',
+    type: 'kind',
+    link: 'https://www.instagram.com/sfurunningclub/'
+  },
+  {
+    image: girlInTheWild,
+    title: 'Girl in the Wild',
+    type: 'kind',
+    link: 'https://girlinthewild.ca/'
+  },
+  {
+    image: whitecaps,
+    title: 'Vancouver Whitecaps',
+    type: 'kind',
+    link: 'https://www.whitecapsfc.com/'
   }
 ];
 

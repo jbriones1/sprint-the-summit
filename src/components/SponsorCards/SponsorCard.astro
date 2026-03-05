@@ -15,16 +15,26 @@ const typeMap: Record<SponsorType, string> = {
   bronze: 'sm',
   kind: 'xs'
 };
+
+const sizeMap: Record<SponsorType, number> = {
+  title: 72,
+  gold: 64,
+  silver: 56,
+  bronze: 48,
+  kind: 40
+};
 ---
 
-<div>
+<div class="flex flex-col items-center" style={`width: ${sizeMap[sponsor.type] * 0.25}rem;`}>
   <a class="block" href={sponsor.link} target="_blank">
     <Image
       src={sponsor.image}
       alt={sponsor.title}
       densities={[1.5, 2, 3]}
-      class:list={['hover-grow', `logo-${typeMap[sponsor.type]}`]}
+      class:list={['hover-grow', 'object-contain', `logo-${typeMap[sponsor.type]}`]}
     />
   </a>
-  <h3 class="h4 mt-2 text-center">{sponsor.title}</h3>
+  <h3 class="h4 mt-2 w-full text-center">
+    {sponsor.title}
+  </h3>
 </div>
