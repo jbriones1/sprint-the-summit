@@ -51,12 +51,6 @@ export const sponsors: SponsorCard[] = [
     title: 'Girl in the Wild',
     type: 'kind',
     link: 'https://girlinthewild.ca/'
-  },
-  {
-    image: whitecaps,
-    title: 'Vancouver Whitecaps',
-    type: 'kind',
-    link: 'https://www.whitecapsfc.com/'
   }
 ];
 
