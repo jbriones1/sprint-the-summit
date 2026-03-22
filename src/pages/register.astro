@@ -7,6 +7,7 @@ import Button from '@components/Button/Button.astro';
 import Tricon from '@components/FeatureCard/Tricon.astro';
 import VenueMap from '@components/FeatureCard/VenueMap.astro';
 import ImageSection from '@components/ImageSection/ImageSection.astro';
+import { eventDate } from '@config/eventData.json';
 import PageLayout from '@layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 
@@ -37,8 +38,9 @@ const icons = [
         <div class="grid grid-rows-2 gap-8 md:grid-cols-2 md:grid-rows-1 md:gap-0">
           <div class="border-primary-700 flex h-full flex-col justify-between md:border-r md:pr-4">
             <p>
-              Register for Sprint the Summit — SFU Burnaby’s inaugural 12 km run on March 20, 2026.
-              Tickets are $10, and 100% of ticket revenue will be reinvested into charitable
+              Register for Sprint the Summit — SFU Burnaby’s inaugural 12 km run in {
+                eventDate(true)
+              }. Tickets are $10, and 100% of ticket revenue will be reinvested into charitable
               foundations (such as Make-A-Wish) to support the next generation of students.
             </p>
             <Button variant="primary" class="mx-auto mt-6 px-10" href="/info"> View Routes </Button>
@@ -49,7 +51,7 @@ const icons = [
               <ul class="mt-4 ml-4 list-outside list-disc">
                 <li>
                   <strong>Race Day:</strong>
-                  March 20, 2026 (10AM-5PM)
+                  {eventDate(true)}
                 </li>
               </ul>
             </div>

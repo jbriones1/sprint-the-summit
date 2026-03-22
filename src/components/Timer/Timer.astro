@@ -1,10 +1,11 @@
 ---
+import { EVENT_DATE } from '@config/eventData.json';
 interface Props {
   isHeader?: boolean;
 }
 
 const { isHeader = false } = Astro.props;
-const target = new Date('2026-03-20T10:00:00-07:00');
+const target = EVENT_DATE;
 
 // Don't render this if the target date has already passed
 if (new Date() >= target) {

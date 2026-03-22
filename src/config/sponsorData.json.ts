@@ -4,7 +4,6 @@ import nativeShoes from '@assets/images/sponsors/native-shoes.png';
 import cascadeTents from '@assets/images/sponsors/cascade-tents.png';
 import sfuRunClub from '@assets/images/sponsors/sfu-run-club.png';
 import girlInTheWild from '@assets/images/sponsors/girl-in-the-wild.png';
-import whitecaps from '@assets/images/sponsors/whitecaps.png';
 
 export type SponsorType = 'title' | 'gold' | 'silver' | 'bronze' | 'kind';
 
